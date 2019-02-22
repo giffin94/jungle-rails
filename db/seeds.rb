@@ -132,5 +132,38 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##Users
+puts "Generating dummy user."
+
+User.create!({
+  name: 'Aedan',
+  email: 'aedan@aedan.aedan',
+  password: '12345',
+  password_confirmation: '12345'
+})
+
+##Reviews
+puts "Generating fake reviews"
+
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: 'fake review text',
+  rating: 3  
+})
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: 'fake review text',
+  rating: 5  
+})
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: 'fake review text',
+  rating: 4  
+})
+
+
 
 puts "DONE!"

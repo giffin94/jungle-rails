@@ -26,6 +26,18 @@
       </div>
     </div>
 
+    <div class="row">
+      <h3>User Reviews</h3>
+      <% if @product.reviews.length > 0 %>
+        <%= render @product.reviews %>
+      <% else %>
+        <p>No reviews for this product yet.</p>
+      <% end %>
+    </div>
+    
+
   </article>
+
+  
 
 </section>
