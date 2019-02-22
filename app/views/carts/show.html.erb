@@ -34,7 +34,8 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <%= form_tag orders_path do %>
+      <% if enhanced_cart.length > 0%>
+      <%= form_tag orders_path do %> 
         <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -45,6 +46,9 @@
           data-email="kvirani@gmail.com"
           data-currency="cad">
         </script>
+      <% end %>
+      <% else %>
+        <p>Your cart is empty! Continue shopping here: <%= link_to 'Home', '/' %> </p>
       <% end %>
     </div>
   </div>

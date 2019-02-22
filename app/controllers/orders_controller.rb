@@ -5,10 +5,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    charge = perform_stripe_charge
-    @order  = create_order(charge)
-
     if @order.valid?
+    @order  = create_order(charge)
+    charge = perform_stripe_charge
+
       empty_cart!
       respond_to do |format|
         UserMailer.confirmation_email(current_user, @order).deliver_now

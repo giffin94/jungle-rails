@@ -6,5 +6,6 @@ class Order < ActiveRecord::Base
   monetize :total_cents, numericality: true
 
   validates :stripe_charge_id, presence: true
+  validates :line_items, length: {minimum: 1}
 
 end
