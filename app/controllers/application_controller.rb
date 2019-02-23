@@ -29,6 +29,15 @@ class ApplicationController < ActionController::Base
   end
   helper_method :cart_subtotal_cents
 
+  def avg_rating
+   @product.reviews.each  do |review|
+      product_rating = 0
+      product_rating += review.rating
+   end
+   product_rating / product.reviews.length
+  end
+  helper_method :avg_rating
+
 
   def update_cart(new_cart)
     cookies[:cart] = {
