@@ -4,10 +4,6 @@
     <h1>Admin &raquo; New Category</h1>
   </header>
 
-  <div class="well">
-    <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
-  </div>
-
   <div class="row">
     <div class="col-sm-6 col-sm-offset-1">
       <%= form_for [:admin, @category] do |form| %>
@@ -30,8 +26,19 @@
 
 
         <%= form.submit 'Create Product', class: 'btn btn-primary' %>
+        <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
+
       <% end %>
     </div>
   </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <h3> Existing Categories </h3>
+    </thead>
+    <tbody>
+      <%= render @categories %>
+    </tbody>
+  </table>
 
 </section>

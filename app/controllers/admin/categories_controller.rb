@@ -5,6 +5,7 @@ class Admin::CategoriesController < AdminController
   end
 
   def new
+    @categories = Category.all
     @category = Category.new
   end
 
