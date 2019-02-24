@@ -1,4 +1,4 @@
-<div class="review"> 
+<div class="row"> 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
           <dt>User:</dt>
@@ -13,6 +13,14 @@
           </dd>
           <dt>Date:</dt>
           <dd><%= review.created_at.strftime('%D') %></dd>
+          <% if author_current?(review) %>
+            <dt>Delete:</dt>
+            <dd>
+              <%= link_to fa_icon('trash'), [@product, review], method: :delete %>
+            </dd>
+          <% end %>
         </dl>
+
       </div>
+      
 </div>

@@ -11,7 +11,9 @@ class OrdersController < ApplicationController
     if @order.valid?
       empty_cart!
       respond_to do |format|
-        UserMailer.confirmation_email(current_user, @order).deliver_now
+        if current_user
+          UserMailer.confirmation_email(current_user, @order).deliver_now
+        end
         format.html { redirect_to(:root, notice: 'Order complete!') }
       end
     else

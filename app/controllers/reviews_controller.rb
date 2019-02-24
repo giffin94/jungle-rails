@@ -10,6 +10,12 @@ class ReviewsController < ApplicationController
     redirect_to product
   end
 
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
+    redirect_to :back
+  end
+
   def authorize
     current_user
   end

@@ -10,6 +10,26 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def has_reviews?(product)
+    product.reviews.length > 0
+  end
+  helper_method :has_reviews?
+
+  def sold_out?(product)
+    product.quantity == 0
+  end
+  helper_method :sold_out?
+
+  def average_rating(product)
+    product.reviews.average(:rating).to_f.round(1)
+  end
+  helper_method :average_rating
+
+  def author_current?(review)
+    review.user_id == current_user.id
+  end
+  helper_method :author_current?
+
   def authorize 
     redirect_to new_session_path unless current_user
   end
@@ -28,7 +48,6 @@ class ApplicationController < ActionController::Base
     enhanced_cart.map {|entry| entry[:product].price_cents * entry[:quantity]}.sum
   end
   helper_method :cart_subtotal_cents
-
 
   def update_cart(new_cart)
     cookies[:cart] = {

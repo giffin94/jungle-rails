@@ -6,25 +6,18 @@
   <body>
     <h1>Thanks, <%= @user.name %></h1>
     <p>
-      Your order has been processed. Details:
+     <h3> Your order has been processed. Details: </h3>
 
-      <div class="order-summary jumbotron">
-  <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th colspan="2">Product</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
         <% @order.line_items.each do |item| %>
           <%= render 'item', product: item.product, quantity: item[:quantity].to_i %>
+          <p>Item: <%= item.product.name %></p>
+          <p>Quantity: <%= item[:quantity].to_i %></p>
+          <p>Price:<%= item.product.price %></p>
+          <p>Subtotal: <%= item.product.price * item[:quantity] %></p>
         <% end %>
-      </tbody>
-    </table>
-    </div>
+
+        <h4>Order Total: <%= order_total %></h4>
+
 
     </p>
 

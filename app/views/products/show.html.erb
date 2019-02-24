@@ -46,7 +46,7 @@
         <h4>Sign in to leave a review!</h6>
         <% end %> 
       </div> <br/>
-      <% if @product.reviews.length > 0 %>
+      <% if has_reviews?(@product) %>
         <%= render @product.reviews.order(created_at: :desc) %>
       <% else %>
         <p>No reviews for this product yet. Be the first one to leave a review!</p>
