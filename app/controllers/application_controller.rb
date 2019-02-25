@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   helper_method :average_rating
 
   def author_current?(review)
-    review.user_id == current_user.id
+    review.user_id == current_user.id if current_user
   end
   helper_method :author_current?
 

@@ -143,26 +143,26 @@ User.create!({
 })
 
 ##Reviews
-puts "Generating fake reviews"
+# puts "Generating fake reviews"
 
-Review.create!({
-  product_id: 12,
-  user_id: 1,
-  description: 'fake review text',
-  rating: 3  
-})
-Review.create!({
-  product_id: 12,
-  user_id: 1,
-  description: 'fake review text',
-  rating: 5  
-})
-Review.create!({
-  product_id: 12,
-  user_id: 1,
-  description: 'fake review text',
-  rating: 4  
-})
+# Review.create!({
+#   product_id: 12,
+#   user_id: 1,
+#   description: 'fake review text',
+#   rating: 3  
+# })
+# Review.create!({
+#   product_id: 12,
+#   user_id: 1,
+#   description: 'fake review text',
+#   rating: 5  
+# })
+# Review.create!({
+#   product_id: 12,
+#   user_id: 1,
+#   description: 'fake review text',
+#   rating: 4  
+# })
 
 
 
