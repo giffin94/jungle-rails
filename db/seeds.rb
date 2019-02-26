@@ -136,10 +136,11 @@ cat3.products.create!({
 puts "Generating dummy user."
 
 User.create!({
-  name: 'Aedan',
+  first_name: 'Aedan',
+  last_name: 'Giffin',
   email: 'aedan@aedan.aedan',
-  password: '12345',
-  password_confirmation: '12345'
+  password: '12345678',
+  password_confirmation: '12345678'
 })
 
 ##Reviews
