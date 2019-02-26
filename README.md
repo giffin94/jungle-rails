@@ -1,7 +1,11 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 and with an accompanying Rspec test suite.
 
+## Screenshots
+!["Welcome to the Jungle:"](https://github.com/giffin94/jungle-rails/blob/master/public/images/Screenshot%20from%202019-02-24%2023-58-11.png)
+
+!["Product Details:"](https://github.com/giffin94/jungle-rails/blob/master/public/images/Screenshot%20from%202019-02-25%2000-21-46.png)
 
 ## Setup
 
